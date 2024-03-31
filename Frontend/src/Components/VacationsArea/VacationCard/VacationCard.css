@@ -1,0 +1,339 @@
+.vacationCards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.cardDiv {
+    width: 350px;
+    height: 400px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: rgba(228, 243, 243, 0.3);
+    position: relative;
+    box-shadow: 0 0 10px;
+}
+
+.cardDiv:hover {
+    box-shadow: 0 0 25px,
+        0 0 40px;
+    border: 3px solid white;
+    background-color: rgba(228, 243, 243);
+
+}
+
+.cardDiv img {
+    width: 100%;
+    height: 64%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.textWrapper {
+    padding: 10px;
+    overflow: hidden;
+    /* Hide any overflowing text */
+    max-width: 100%;
+    /* Ensure text stays within the boundaries of the container */
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    height: 40px;
+    background-color: rgb(156, 175, 181);
+    border-radius: 10px;
+}
+
+.price-august {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border: 1px solid;
+    height: 40px;
+    background-color: rgb(156, 175, 181);
+    border-radius: 10px;
+
+}
+
+.price-august>span {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.price-august>.discounted-price {
+    margin-right: 65px;
+}
+.sale-image {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    overflow: hidden; /* This is important to hide the overflowing parts */
+    pointer-events: none;
+}
+
+.sale-image img {
+    margin-top: -4px;
+    margin-left: -7px; /* Adjusted margin to cut off 7 pixels from the left side */
+}
+
+.description,
+.date {
+    margin-bottom: 5px;
+    /* Add spacing between text elements */
+}
+
+.date {
+    text-align: left;
+}
+
+.description {
+    word-break: break-all;
+    /* Break long words and wrap onto the next line */
+    text-overflow: ellipsis;
+    /* Display ellipsis (...) for truncated text */
+    text-wrap: nowrap;
+
+}
+
+.destination {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 225px;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    /* width and color */
+}
+
+.card-details-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.delete-container {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.edit-container {
+    position: absolute;
+    top: 5px;
+    right: 55px;
+}
+
+.likeButton {
+    display: flex;
+    border: 2px solid;
+    width: 100px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.likeCount {
+    display: inline;
+
+}
+
+.con-like {
+    --red: rgb(255, 50, 50);
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.con-like .like {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.con-like .checkmark {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.con-like .outline,
+.con-like .filled {
+    fill: var(--red);
+    position: absolute;
+}
+
+.con-like .filled {
+    animation: kfr-filled 0.5s;
+    display: none;
+}
+
+.con-like .celebrate {
+    position: absolute;
+    animation: kfr-celebrate 0.5s;
+    animation-fill-mode: forwards;
+    display: none;
+}
+
+.con-like .poly {
+    stroke: var(--red);
+    fill: var(--red);
+}
+
+.con-like .like:checked~.checkmark .filled {
+    display: block
+}
+
+.con-like .like:checked~.checkmark .celebrate {
+    display: block
+}
+
+.deleteButton {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+    gap: 2px;
+}
+
+.svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+}
+
+.svgIcon path {
+    fill: white;
+}
+
+.deleteButton:hover {
+    transition-duration: 0.3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+    gap: 0;
+}
+
+.bin-top {
+    transform-origin: bottom right;
+}
+
+.deleteButton:hover .bin-top {
+    transition-duration: 0.5s;
+    transform: rotate(160deg);
+}
+
+.edit-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.edit-svgIcon {
+    width: 17px;
+    transition-duration: 0.3s;
+}
+
+.edit-svgIcon path {
+    fill: white;
+}
+
+.edit-button:hover {
+    width: 120px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+}
+
+.edit-button:hover .edit-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.edit-button::before {
+    display: none;
+    content: "Edit";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+}
+
+.edit-button:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+}
+
+
+
+
+@keyframes kfr-filled {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes kfr-celebrate {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+        display: none;
+    }
+}

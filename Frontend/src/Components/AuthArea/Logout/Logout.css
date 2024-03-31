@@ -1,0 +1,46 @@
+.Logout {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    z-index: 2;
+  }
+  
+  .Logout .logout-text {
+    display: inline-block;
+    transition: transform 0.3s ease; opacity: 0;
+    color: black;
+    font-size: medium;
+  }
+  
+  .Logout .image {
+    height: 28px;
+    width: 28px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .Logout:hover .logout-text {
+    transform: translateX(-30%);
+    opacity: 1;
+  }
+  
+  .Logout:hover .image {
+    transform: translateX(-40%);
+  }
+  /* Media query for smaller screens */
+@media screen and (max-width: 992px) {
+    .Logout {
+        top: 5px;
+        right: 5px; 
+    }
+    
+    .Logout .logout-text {
+        font-size: small;
+    }
+    
+    .Logout .image {
+        height: 24px; 
+        width: 24px;
+    }
+}
+  

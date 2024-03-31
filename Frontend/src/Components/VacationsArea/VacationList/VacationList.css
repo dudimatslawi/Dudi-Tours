@@ -1,0 +1,70 @@
+.List {
+    height: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    /* Set a single column by default */
+}
+
+
+.cardsContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    column-gap: 28px;
+    /* Adjust the value as needed */
+    row-gap: 50px;
+    /* Keep the row gap at 50px */
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.vacationCard {
+    width: 100%;
+    /* Make the cards responsive */
+    height: 400px;
+    border: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.paginationContainer {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.checkboxes {
+    width: 98%;
+    /* Make the checkboxes responsive */
+    background-color: white;
+    border: solid 1px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.checkboxes>h2 {
+    text-align: left;
+}
+
+.pagination {
+    background-color: inherit;
+}
+
+@media (min-width: 1420px) {
+    .List {
+        grid-template-columns: 20% 80%;
+        /* Use the two-column layout for larger screens */
+    }
+
+    .checkboxes {
+        position: absolute;
+        width: 300px;
+    }
+}

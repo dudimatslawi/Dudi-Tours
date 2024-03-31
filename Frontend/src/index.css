@@ -1,0 +1,92 @@
+html,
+body,
+#root {
+    margin: 0;
+    height: 100%;
+    text-align: center;
+    background-image: url("Assets/Images/background5.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+a {
+    color: blue;
+}
+
+form {
+    width: 500px;
+    border: 2px solid rgb(255, 255, 255, .5);
+    text-align: left;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px;
+}
+
+.input-group,
+.mb-3 {
+    margin-bottom: 30px;
+    font-size: large;
+    z-index: 3;
+    position: relative;
+}
+
+form>button {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: large;
+}
+
+form {
+    position: relative;
+}
+
+.error {
+    color: red;
+    position: absolute;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.vacation-image-form {
+    position: absolute;
+    /* or absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* For WebKit browsers (e.g. Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+    /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+    /* color of the track */
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* color of the scrollbar handle */
+    border: 1px solid;
+    border-radius: 20px;
+}
+textarea {
+    max-height: 100px;
+}
+
+
+@font-face {
+    font-family: headersFont;
+    src: url("Assets/fonts/Teenage\ Fortun\ Demo.ttf");
+}

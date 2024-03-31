@@ -1,0 +1,104 @@
+.SignUp {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../../../Assets/Images/authBackground4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: 1s linear;
+}
+
+.SignUp>form {
+    width: 420px;
+    background-color: transparent;
+    color: beige;
+    border: 2px solid rgb(255, 255, 255, .5);
+    box-shadow: none;
+
+}
+
+.SignUp h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.SignUp>form>input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    font-size: large;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255, .5);
+    color: aliceblue;
+}
+
+.SignUp>form>input:focus {
+    background-color: transparent;
+}
+
+.SignUp>form>input::placeholder {
+    color: lavender;
+    position: relative;
+    left: 3px;
+}
+
+.SignUp img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 21px;
+    margin-top: 4px;
+}
+
+.SignUp .LoginSpan {
+    display: flex;
+    justify-content: center;
+}
+
+.LoginSpan>a {
+    color: beige;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.LoginSpan>a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.SignUp>form>button {
+    box-shadow: 0 0 1px cyan,
+        0 0 15px cyan;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid rgb(255, 255, 255, .5);
+    border-radius: 5px;
+    background-color: transparent;
+    color: beige;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.SignUp>form>button:hover {
+    background-color: rgb(51, 226, 226, 0.9);
+    box-shadow: 0 0 1px cyan,
+        0 0 15px cyan, 0 0 30px cyan,
+        0 0 60px cyan;
+}
+
+form>button:active {
+    transform: translateY(2px);
+}

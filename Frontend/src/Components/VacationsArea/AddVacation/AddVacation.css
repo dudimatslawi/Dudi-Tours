@@ -1,0 +1,32 @@
+.endDateValidation{
+    color: red;
+    display: inline-block;
+    position: relative;
+    left: 500px;
+    bottom: 70px;
+    text-wrap: nowrap;
+    margin-bottom: 0;
+}
+.back {
+    position: absolute;
+    z-index: 4;
+    text-decoration: none;
+    font-size: xx-large;
+    text-shadow: white 2px 2px 2px;
+    right: 45px;
+    transition: transform 0.3s linear;
+
+}
+
+.back:hover {
+    transform: translateX(-20%);
+    font-weight: bold;
+}
+.addVacation h1{
+    position: relative;
+    font-weight: bold;
+    z-index: 3;
+    font-size: 40px;
+    color: black;
+    -webkit-text-stroke: 1px white;
+  }

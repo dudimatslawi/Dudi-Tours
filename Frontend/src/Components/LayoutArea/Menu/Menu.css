@@ -1,0 +1,16 @@
+.Menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    font-family: headersFont;
+}
+
+.nav-link {
+    margin-left: 20px;
+    font-size: x-large;
+}
+.navbar-toggler{
+    margin-top: 15px;
+}
+

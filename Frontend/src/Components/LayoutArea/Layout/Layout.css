@@ -1,0 +1,43 @@
+.LayoutAdmin {
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    /* שלוש שורות */
+}
+
+header {
+    position: relative;
+    z-index: 2;
+}
+
+nav {
+    z-index: 2;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.1);
+}
+
+main {
+    overflow: auto;
+}
+
+.LayoutUser {
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 12% 88%;
+    /* שלוש שורות */
+
+}
+
+.LayoutSignIn>header {
+    display: none;
+}
+@media screen and (max-width: 992px) {
+    nav {
+        z-index: 4;
+        background-color: rgba(244, 241, 241, 0.9);
+    }
+    
+    }
+    

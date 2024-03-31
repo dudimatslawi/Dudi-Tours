@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "c53ffceb-bea5-44b6-8803-bc03f4562266",
+		"name": "final-project-vacation-website",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32658561"
+	},
+	"item": [
+		{
+			"name": "vacations",
+			"item": [
+				{
+					"name": "get all vacation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/allVacations/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"allVacations",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one vacation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/oneVacation/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"oneVacation",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add vacation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "destination",
+									"value": "aaaaaa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+									"type": "text"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-07-01",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-07-02",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/dodim/OneDrive/Desktop/image.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/addVacation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"addVacation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update vacation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "destination",
+									"value": "Mykonos, Greece",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Vacationing in Mykonos during August promises an unforgettable experience filled with sun-soaked days and vibrant nights. Renowned for its stunning beaches, azure waters, and iconic windmills, Mykonos is a quintessential Greek island paradise. In August, the island is at its peak, bustling with energy as travelers from around the globe flock to its shores. With temperatures averaging around 30°C (86°F), it's the perfect time to indulge in leisurely beach days, where the gentle sea breeze provides relief from the summer heat. Whether lounging on the golden sands of Paradise Beach or exploring the picturesque streets of Mykonos Town, there's no shortage of activities to enjoy. As the sun sets, the island transforms into a lively hotspot, with beach clubs and waterfront bars coming to life with music and revelry. From savoring fresh seafood at seaside tavernas to dancing under the stars at open-air clubs, Mykonos offers a dynamic nightlife scene that caters to every taste. With its captivating beauty and vibrant atmosphere, a vacation in Mykonos during August is sure to create lasting memories of endless summer bliss.",
+									"type": "text"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-08-07",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-08-12",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "800.00",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/dodim/OneDrive/Desktop/mykonos.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/editVacation/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"editVacation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/deleteVacation/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"deleteVacation",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vacations/images/18e01204-7dc5-4bec-bb6a-7b10516ba117.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vacations",
+								"images",
+								"18e01204-7dc5-4bec-bb6a-7b10516ba117.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "dudi",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "matslawi",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dodim@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "dodim6666@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "likes",
+			"item": [
+				{
+					"name": "add like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/users/3/vacations/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"3",
+								"vacations",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete like",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/users/4/vacations/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"4",
+								"vacations",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJmaXJzdE5hbWUiOiJkdWRpIiwibGFzdE5hbWUiOiJtYXRzbGF3aSIsImVtYWlsIjoiZG9kaW02NjY2QGdtYWlsLmNvbSIsInJvbGVJZCI6MX0sImlhdCI6MTcwOTA2MTg2OSwiZXhwIjoxNzA5MDc5ODY5fQ.MKbwYOKF9pwOuYygucmhfyT6Rv7_ZsEUrWVlzz1eONY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

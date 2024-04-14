@@ -1,0 +1,94 @@
+# docker-compose version
+version: '3.8'
+
+# services list:
+services:
+
+  # database service name:
+  dudi-tours-database:
+
+    # Image name to create from Dockerfile:
+    image: dudimatslawi/dudi-tours-database-image:1.0
+
+    # Where is the location of Dockerfile:
+    build: ./Database
+
+    # Container name:
+    container_name: dudi-tours-database-container
+
+    # on crash -what to do - restart unless manually stpped:
+    restart: unless-stopped
+
+    # volumes
+    volumes:
+      - dudi-tours-db:/var/lib/mysql
+
+    # Environment variables needed by Mysql installation
+    environment:
+      MYSQL_HOST: localhost # internally for container
+      MYSQL_USER: dudi
+      MYSQL_PASSWORD: tours
+      MYSQL_ROOT_PASSWORD: tours #needed by mysql image
+      MYSQL_DATABASE: dudiTours
+      # -------------------------------------------------------------
+
+      # Backend Service name:
+  dudi-tours-backend:
+
+    # on which service we're depending on:
+    depends_on:
+      - dudi-tours-database
+
+    # Image name to create from Dockerfile:
+    image: dudimatslawi/dudi-tours-backend-image:1.0
+
+    # Where is the location of Dockerfile:
+    build: ./Backend
+
+    # Container name:
+    container_name: dudi-tours-backend-container
+
+    # port binding:
+    ports:
+      - 4000:4000
+
+    # on crash -what to do - restart unless manually stpped:
+    restart: unless-stopped
+
+    # Environment variables needed by Mysql installation
+    environment:
+      MYSQL_HOST: dudi-tours-database # the container service name is the computer name in the network 
+      MYSQL_USER: dudi
+      MYSQL_PASSWORD: tours
+      MYSQL_DATABASE: dudiTours
+
+  # ---------------------------------------------------------------------
+
+
+  # frontend service
+  dudi-tours-frontend:
+
+    # on which service we're depending on:
+    depends_on:
+      - dudi-tours-backend 
+    
+    # Image name to create from Dockerfile:
+    image: dudimatslawi/dudi-tours-frontend-image:1.0
+
+    # Where is the location of Dockerfile:
+    build: ./Frontend
+
+    # Container name:
+    container_name: dudi-tours-frontend-container
+
+    # port binding:
+    ports:
+      - 3000:3000
+ 
+    # on crash -what to do - restart unless manually stpped:
+    restart: unless-stopped
+
+# ---------------------------------------------------------------------
+# must list the named-volumes here:
+volumes:
+  dudi-tours-db:

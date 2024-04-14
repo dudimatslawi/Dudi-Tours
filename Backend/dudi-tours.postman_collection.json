@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "c53ffceb-bea5-44b6-8803-bc03f4562266",
-		"name": "final-project-vacation-website",
+		"_postman_id": "f155c1c7-a9e2-4e52-8ffb-a5c50156c8ac",
+		"name": "dudi-tours",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "32658561"
 	},
@@ -36,7 +36,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/oneVacation/15",
+							"raw": "http://localhost:4000/api/oneVacation/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -45,7 +45,7 @@
 							"path": [
 								"api",
 								"oneVacation",
-								"15"
+								"2"
 							]
 						}
 					},
@@ -230,7 +230,7 @@
 								},
 								{
 									"key": "email",
-									"value": "dodim@gmail.com",
+									"value": "dodim123@gmail.com",
 									"type": "text"
 								},
 								{
@@ -301,7 +301,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/users/3/vacations/8",
+							"raw": "http://localhost:4000/api/users/3/vacations/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -312,7 +312,7 @@
 								"users",
 								"3",
 								"vacations",
-								"8"
+								"9"
 							]
 						}
 					},
@@ -324,7 +324,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/users/4/vacations/5",
+							"raw": "http://localhost:4000/api/users/3/vacations/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -333,9 +333,9 @@
 							"path": [
 								"api",
 								"users",
-								"4",
+								"3",
 								"vacations",
-								"5"
+								"9"
 							]
 						}
 					},
@@ -349,7 +349,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJmaXJzdE5hbWUiOiJkdWRpIiwibGFzdE5hbWUiOiJtYXRzbGF3aSIsImVtYWlsIjoiZG9kaW02NjY2QGdtYWlsLmNvbSIsInJvbGVJZCI6MX0sImlhdCI6MTcwOTA2MTg2OSwiZXhwIjoxNzA5MDc5ODY5fQ.MKbwYOKF9pwOuYygucmhfyT6Rv7_ZsEUrWVlzz1eONY",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJmaXJzdE5hbWUiOiJkdWRpIiwibGFzdE5hbWUiOiJtYXRzbGF3aSIsImVtYWlsIjoiZG9kaW02NjY2QGdtYWlsLmNvbSIsInJvbGVJZCI6MX0sImlhdCI6MTcxMjIyMzQ5NywiZXhwIjoxNzEyMjQxNDk3fQ.5FxW6qOwh1Y1qgDfvbml9XD_CzP23LaILV0FZUg5mLI",
 				"type": "string"
 			}
 		]

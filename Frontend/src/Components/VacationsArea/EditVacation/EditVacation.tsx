@@ -5,9 +5,6 @@ import { notify } from "../../../Utils/Notify";
 import { vacationsService } from "../../../Services/VacationsService";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Button, TextField } from "@mui/material";
-import SendIcon from '@mui/icons-material/Send';
-import { authService } from "../../../Services/AuthService";
 import { appStore } from "../../../Redux/store";
 import { RoleModel } from "../../../Models/RoleModel";
 
@@ -33,14 +30,16 @@ function EditVacation(): JSX.Element {
 
     const startDate = watch("startDate");
     const validateEndDate = (value: string) => {
+        // Convert startDate and value (endDate) to Date objects
         const startDateObj = new Date(startDate);
         const endDateObj = new Date(value);
+
+        // Check if endDate is greater than startDate
         if (endDateObj <= startDateObj) {
             return "* End date must be greater than start date";
         }
         return true;
     };
-
     async function edit(vacation: VacationModel): Promise<void> {
         try {
             // extract first image from fileList into product.image
@@ -60,11 +59,11 @@ function EditVacation(): JSX.Element {
         vacationsService.getOneVacation(id)
             .then(vacation => {
 
-                // Parse start and end dates into Date objects
+                // Parse start and end dates into Date objects:
                 const startDate = new Date(vacation.startDate);
                 const endDate = new Date(vacation.endDate);
 
-                // Add one day to the dates
+                // Add one day to the dates:
                 startDate.setDate(startDate.getDate() + 1);
                 endDate.setDate(endDate.getDate() + 1);
 

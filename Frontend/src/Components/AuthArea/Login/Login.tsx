@@ -11,41 +11,45 @@ import passwordImage from "../../../Assets/Images/padlock.png";
 import { useEffect } from "react";
 
 function Login(): JSX.Element {
-
-    // use form for Login form:
+    // useForm is a hook from the react-hook-form library, used for handling form state and validation
     const { register, handleSubmit } = useForm<CredentialsModel>();
+    const navigate = useNavigate(); // useNavigate is a hook from react-router-dom for navigation
 
-    const navigate = useNavigate();
+    // Check if the user is already logged in, if so, redirect to the "/list" route
     useEffect(() => {
         if (appStore.getState()?.user) {
-            navigate("/list")
+            navigate("/list");
         }
-    }, [])
+    }, []);
 
+    // The main function to handle login submission
     async function send(credentials: CredentialsModel): Promise<void> {
         try {
-
+            // Get references to the login image and form elements
             const loginImage = document.querySelector('.Login') as HTMLElement;
             const form = document.querySelector('.auth-form') as HTMLElement;
 
+            // Call the login service to authenticate the user
             await authService.login(credentials);
-            // Apply the scale transformation
+
+            // Apply visual effects on successful login
             loginImage.style.transform = 'scale(1.8)';
             form.style.transition = 'opacity 1s ease';
-            form.style.opacity = '0'
+            form.style.opacity = '0';
 
+            // Delay for 1 second, then display a welcome message and navigate to the "/list" route
             setTimeout(async () => {
                 const firstName = appStore.getState().user.firstName;
                 const lastName = appStore.getState().user.lastName;
                 notify.success(`Welcome back ${firstName} ${lastName}!`);
+                sessionStorage.setItem("modalShown", "true");
                 navigate("/list");
             }, 1000);
         } catch (err: any) {
+            // Display an error message if login fails
             notify.error(err);
         }
-    }
-
-    return (
+    } return (
         <div className="Login">
 
             <form className="auth-form" onSubmit={handleSubmit(send)}>

@@ -29,11 +29,12 @@ function Reports(): JSX.Element {
             return;
         }
         if (appStore.getState().user?.roleId === RoleModel.User) {
+            // Handle case when not admin try to Browse this site
             navigate("/list")
             return;
         }
 
-
+        // get all vacations
         vacationsService.getAllVacations(user.id)
             .then(v => setVacations(v))
             .catch(err => notify.error(err));
@@ -73,8 +74,10 @@ function Reports(): JSX.Element {
         window.URL.revokeObjectURL(url);
     }
 
+    // create array to canvas colors:
     const colors = ["#E0CF9A", "#9BE0CF", "rgb(46, 233, 189)"];
 
+    // canvas options:
     const options: CanvasJSReact.CanvasJSChartOptions = {
         theme: "dark2",
         title: {
@@ -109,7 +112,8 @@ function Reports(): JSX.Element {
                     }}
                 >
                     Download CSV
-                </Button>            </div>
+                </Button>
+            </div>
         </div>
 
     );

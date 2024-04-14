@@ -7,6 +7,7 @@ import { appConfig } from "../2-utils/app-config";
 
 class VacationService {
 
+    // get all vacations and likes from database
     public async getAllVacations(userId: number): Promise<VacationModel[]> {
         const sql = `
             SELECT DISTINCT
@@ -23,6 +24,7 @@ class VacationService {
         return vacations;
     }
 
+    // get specific vacation by id:
     public async getOneVacation(vacationId: number): Promise<VacationModel> {
         const sql = `SELECT *, CONCAT(?, imageName) as imageUrl FROM vacations WHERE id = ?`
         const vacations = await dal.execute(sql, [appConfig.baseImageUrl, vacationId]);

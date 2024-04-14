@@ -90,23 +90,33 @@ class VacationsService {
     }
 
     public async addLike(vacation: VacationModel): Promise<void> {
-        await axios.post(appConfig.vacationsUrl + "users/" + appStore.getState().user.id + "/vacations/" + vacation.id)
+        // Send a POST request to the server to add a like for the specified vacation
+        await axios.post(appConfig.vacationsUrl + "users/" + appStore.getState().user.id + "/vacations/" + vacation.id);
+
+        // After adding the like, retrieve the updated list of vacations for the current user
         await this.getAllVacations(appStore.getState().user.id);
     }
+
     public async unLike(vacation: VacationModel): Promise<void> {
-        await axios.delete(appConfig.vacationsUrl + "users/" + appStore.getState().user.id + "/vacations/" + vacation.id)
+        // Send a DELETE request to the server to remove a like for the specified vacation
+        await axios.delete(appConfig.vacationsUrl + "users/" + appStore.getState().user.id + "/vacations/" + vacation.id);
+
+        // After removing the like, retrieve the updated list of vacations for the current user
         await this.getAllVacations(appStore.getState().user.id);
     }
 
     public isAugust2024(dateString: string) {
+        // Create a new Date object from the provided dateString
         const date = new Date(dateString);
-        return date.getFullYear() === 2024 && date.getMonth() === 7; // Month index is zero-based
+
+        // Check if the year is 2024 and the month is August (month index is zero-based, so 7 represents August)
+        return date.getFullYear() === 2024 && date.getMonth() === 7;
     }
 
     public calculateDiscountedPrice(price: number) {
+        // Calculate the discounted price by applying a 10% discount
         return (price * 0.9).toFixed(2); // Applying 10% discount
     }
-
 
 }
 export const vacationsService = new VacationsService();

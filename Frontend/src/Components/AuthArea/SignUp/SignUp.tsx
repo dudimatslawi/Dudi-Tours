@@ -14,25 +14,33 @@ import { useEffect } from "react";
 function SignUp(): JSX.Element {
 
     const { register, handleSubmit } = useForm<UserModel>();
+    // useForm is a hook from the react-hook-form library, used for handling form state and validation
+    // In this case, it's being used with the UserModel type
+
     const navigate = useNavigate();
+    // useNavigate is a hook from react-router-dom for navigation
+
     useEffect(() => {
         if (appStore.getState().user) {
-            navigate("/list")
+            navigate("/list");
         }
-    }, [])
-
-
+    }, []);
+    // This useEffect hook checks if the user is already logged in (by checking if appStore.getState().user exists)
+    // If the user is logged in, it navigates to the "/list" route
 
     async function send(user: UserModel): Promise<void> {
         try {
             await authService.register(user);
+            // Call the authService.register function to register a new user
+
             const signUpImage = document.querySelector('.SignUp') as HTMLElement;
             const form = document.querySelector('.auth-form') as HTMLElement;
+            // Get references to the signup image and form elements
 
-            // Apply the scale transformation
+            // Apply visual effects on successful registration
             signUpImage.style.transform = 'scale(1.8)';
             form.style.transition = 'opacity 1s ease';
-            form.style.opacity = '0'
+            form.style.opacity = '0';
 
             setTimeout(async () => {
                 const firstName = appStore.getState().user.firstName;
@@ -40,8 +48,11 @@ function SignUp(): JSX.Element {
                 notify.success(`Welcome back ${firstName} ${lastName}!`);
                 navigate("/list");
             }, 1000);
+            // Delay for 1 second, then display a welcome message and navigate to the "/list" route
+
         } catch (err: any) {
             notify.error(err);
+            // Display an error message if registration fails
         }
     }
 

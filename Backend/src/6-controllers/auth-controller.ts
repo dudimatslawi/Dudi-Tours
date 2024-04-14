@@ -11,6 +11,7 @@ class AuthController {
         this.registerRoutes();
     }
 
+    // all auth routes:
     private registerRoutes(): void {
         this.router.post("/register", this.register);
         this.router.post("/login", this.login)

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { interceptors } from './Utils/Interceptors';
 import { Provider } from 'react-redux';
 import { appStore } from './Redux/store';
+import Modal from './Components/LayoutArea/Modal/Modal';
 
 // create interceptor once:
 interceptors.listen();
@@ -21,7 +22,4 @@ root.render(
     </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

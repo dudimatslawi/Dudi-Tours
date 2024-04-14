@@ -34,6 +34,7 @@ function VacationCard(props: VacationCardProps): JSX.Element {
         }
     }
 
+    // function for add and remove like:
     async function likeToggle(): Promise<void> {
         try {
             if (props.vacation.isLiked === 0) {

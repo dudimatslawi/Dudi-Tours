@@ -40,6 +40,7 @@ class AuthService {
             sessionStorage.setItem("token", token);
         }, 1000);
 
+        // timer for logout user if authorization time has passed:
         this.timerId = setTimeout(() => {
             this.logout();
             notify.error("The authorization time has passed, for entering the site please log in")
@@ -66,6 +67,8 @@ class AuthService {
             // save the token in local storage:
             sessionStorage.setItem("token", token);
         }, 1000);
+
+        // timer for logout user if authorization time has passed:
         this.timerId = setTimeout(() => {
             this.logout();
             notify.error("The authorization time has passed, for entering the site please log in")

@@ -67,19 +67,22 @@
 .price-august>.discounted-price {
     margin-right: 65px;
 }
+
 .sale-image {
     position: absolute;
     width: 60px;
     height: 60px;
     top: 0;
     left: 0;
-    overflow: hidden; /* This is important to hide the overflowing parts */
+    overflow: hidden;
+    /* This is important to hide the overflowing parts */
     pointer-events: none;
 }
 
 .sale-image img {
     margin-top: -4px;
-    margin-left: -7px; /* Adjusted margin to cut off 7 pixels from the left side */
+    margin-left: -7px;
+    /* Adjusted margin to cut off 7 pixels from the left side */
 }
 
 .description,
@@ -158,7 +161,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    z-index: 20;
+    z-index: 9;
     cursor: pointer;
 }
 
@@ -275,7 +278,7 @@
     width: 120px;
     border-radius: 50px;
     transition-duration: 0.3s;
-    background-color: rgb(255, 69, 69);
+    background-color: #E0CF9A;
     align-items: center;
 }
 

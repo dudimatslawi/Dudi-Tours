@@ -1,49 +1,45 @@
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import "./AddVacation.css";
 import VacationModel from "../../../Models/VacationModel";
 import { vacationsService } from "../../../Services/VacationsService";
 import { notify } from "../../../Utils/Notify";
-import { NavLink, useNavigate } from "react-router-dom";
-import { Button, TextField } from "@mui/material";
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { styled } from '@mui/material/styles';
-import { authService } from "../../../Services/AuthService";
+import { useNavigate } from "react-router-dom";
 import { appStore } from "../../../Redux/store";
 import { RoleModel } from "../../../Models/RoleModel";
 
 
 
 function AddVacation(): JSX.Element {
-
+    // useForm and useState hooks for form handling and image preview
     const { register, handleSubmit, formState: { errors }, watch } = useForm<VacationModel>();
     const [imageUrl, setImageUrl] = useState<string>();
 
-    // Retrieve token from session storage
-    const navigate = useNavigate()
+    // useNavigate hook for navigation
+    const navigate = useNavigate();
 
+    // Check if the user is authenticated (token exists) and has the correct role
     const token = sessionStorage.getItem("token");
     useEffect(() => {
         if (!token) {
-            // Handle case when token is not found
             navigate("/login");
             return;
         }
 
         if (appStore.getState().user?.roleId === RoleModel.User) {
-            navigate("/list")
+            navigate("/list");
         }
-    }, [])
+    }, []);
 
+    // Watch the "startDate" field for validation
     const startDate = watch("startDate");
 
     async function send(vacation: VacationModel): Promise<void> {
-        // Extract first image from fileList into product.image
+        // Extract the first image from the FileList
         vacation.image = (vacation.image as unknown as FileList)[0];
 
-
-
         try {
+            // Function to handle form submission and add a new vacation
             await vacationsService.addVacation(vacation);
             notify.success("Vacation has been added. ✈️");
             navigate("/list");
@@ -52,6 +48,7 @@ function AddVacation(): JSX.Element {
         }
     }
 
+    // Custom validation function for the "endDate" field
     const validateEndDate = (value: string) => {
         const startDateObj = new Date(startDate);
         const endDateObj = new Date(value);

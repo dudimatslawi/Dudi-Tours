@@ -1,6 +1,6 @@
 import fsPromises from "fs/promises";
-// import path from "path";
 
+// display the errors in errors file:
 class Logger {
 
     private filePath = "errors.log";

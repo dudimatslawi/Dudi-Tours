@@ -20,7 +20,7 @@ function VacationDetails(): JSX.Element {
             navigate("/login");
             return;
         }
-
+        // get all right details
         const id = +params.id;
         vacationsService.getOneVacation(id)
             .then(v => {

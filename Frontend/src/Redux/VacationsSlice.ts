@@ -43,7 +43,7 @@ function filterByLike(currentState: VacationModel[], action: PayloadAction<boole
     return newState
 }
 
-// create the product slice:
+// create the vacation slice:
 const vacationsSlice = createSlice({
     name: "vacations", //unique name for slice
     initialState: [],

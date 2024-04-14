@@ -18,6 +18,7 @@ export class UserModel {
         this.password = user.password;
         this.roleId = user.roleId;
     }
+    // validation schema for user
     private static validationSchema = Joi.object({
         id: Joi.number().forbidden(),
         firstName: Joi.string().required().min(2).max(40),
@@ -27,7 +28,8 @@ export class UserModel {
         roleId: Joi.number().optional().equal(RoleModel.Admin, RoleModel.User).integer()
     })
 
-    public validate(): void {
+        // checking current object against the schema:
+        public validate(): void {
         const result = UserModel.validationSchema.validate(this);
         if (result.error) throw new ValidationError(result.error.message)
     }

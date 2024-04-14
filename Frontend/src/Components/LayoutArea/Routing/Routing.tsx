@@ -26,10 +26,10 @@ function Routing(): JSX.Element {
                 {/* vacation details */}
                 <Route path="/vacations/details/:id" element={<VacationDetails />} />
 
-                {/* vacation details */}
+                {/* vacation edit */}
                 <Route path="/vacations/edit/:id" element={<EditVacation />} />
 
-                {/* vacation details */}
+                {/* vacation reports */}
                 <Route path="/reports" element={<Reports />} />
 
                 {/* Login */}

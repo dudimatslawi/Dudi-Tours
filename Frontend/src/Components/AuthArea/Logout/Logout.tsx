@@ -9,8 +9,10 @@ import "./Logout.css";
 
 function Logout(): JSX.Element {
 
+    // get user from redux:
     const user = useSelector<AppState, UserModel>(appState => appState.user);
 
+    // apply logout function from the service:
     async function logMeOut() {
         notify.success(`bye bye ${user.firstName}`)
         authService.logout();

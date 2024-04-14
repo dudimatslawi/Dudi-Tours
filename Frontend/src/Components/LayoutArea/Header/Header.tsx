@@ -8,6 +8,7 @@ import userImage from "../../../Assets/Images/profile-user.png"
 
 
 function Header(): JSX.Element {
+    // get user from redux
     const user = useSelector<AppState, UserModel>(appState => appState.user);
 
     return (

@@ -8,8 +8,11 @@ import { UnauthorizedError, ValidationError } from "../3-models/client-errors";
 
 class AuthService {
     public async register(user: UserModel): Promise<string> {
+
+        // execute validation
         user.validate();
 
+        // check if email is taken:
         const isTaken = await this.isEmailTaken(user.email);
 
         if (isTaken) throw new ValidationError("email already taken");
@@ -57,6 +60,7 @@ class AuthService {
         return token
     }
 
+    // check if email is already exist in database: 
     private async isEmailTaken(email: string): Promise<boolean> {
         const sql = `SELECT EXISTS(select * from users where email = ?) AS isTaken`;
         const result = await dal.execute(sql, [email]);

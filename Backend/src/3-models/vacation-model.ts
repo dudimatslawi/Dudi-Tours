@@ -25,7 +25,7 @@ export class VacationModel {
         this.isLiked = vacation.isLiked;
         this.likesCount = vacation.likesCount;
     }
-
+    // validation schema to insert vacation:
     private static insertValidationSchema = Joi.object({
         id: Joi.number().forbidden(),
         destination: Joi.string().required().min(2).max(50),
@@ -39,6 +39,7 @@ export class VacationModel {
         likesCount: Joi.number().forbidden().integer()
     })
 
+    // validation schema to update vacation:
     private static updateValidationSchema = Joi.object({
         id: Joi.number().required().min(1).integer(),
         destination: Joi.string().required().min(2).max(50),
